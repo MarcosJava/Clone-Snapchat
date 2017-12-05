@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CadastroViewController: UIViewController {
     
+    @IBOutlet weak var nameCompleteTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -27,11 +29,11 @@ class CadastroViewController: UIViewController {
     
     @IBAction func registerBtn(_ sender: Any) {
         
-        guard let email = self.emailTextField.text, let password = self.passwordTextField.text, let confirmPassword = self.confirmPasswordTextField.text else {
+        guard let email = self.emailTextField.text, let password = self.passwordTextField.text, let confirmPassword = self.confirmPasswordTextField.text, let nameComplete = self.nameCompleteTextField.text else {
             return
         }
         
-        if email == "" || password == "" || confirmPassword == "" { return }
+        if email == "" || password == "" || confirmPassword == "" || nameComplete == "" { return }
         
         if confirmPassword == password {
             print("criou o usuario \(email)")
@@ -42,6 +44,14 @@ class CadastroViewController: UIViewController {
                     if user == nil {
                         super.showMessage(title: "Erro Autenticacao", message: "Problema ao autenticar usuario, tente novamente")
                     } else {
+                        
+                        let database = Database.database().reference()
+                        
+                        let dataUserSave = ["nome": nameComplete, "email": email]
+                        
+                        let users = database.child("usuarios")
+                        users.child((user?.uid)!).setValue(dataUserSave)
+                        
                         self.performSegue(withIdentifier: "goToStartVC", sender: nil)
                     }
                     
@@ -75,10 +85,8 @@ class CadastroViewController: UIViewController {
                 
             })
             
-            
-            
         } else {
-            print("senhas zoadas")
+            super.showMessage(title: "Erro", message: "As senhas estão erradas.")
         }
     
     }

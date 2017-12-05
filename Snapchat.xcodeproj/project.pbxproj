@@ -10,8 +10,11 @@
 		188B30011FCB547800A23AE7 /* UIViewController+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B30001FCB547800A23AE7 /* UIViewController+Common.swift */; };
 		188B30031FCB568100A23AE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B30021FCB568100A23AE7 /* LoginViewController.swift */; };
 		18A0E6291FC9BF0500BAAA25 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0E6281FC9BF0500BAAA25 /* CadastroViewController.swift */; };
+		18A7E8021FD68EC500A4C2E6 /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7E8011FD68EC500A4C2E6 /* Snap.swift */; };
 		18C7A9791FCD54990044BD14 /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7A9781FCD54990044BD14 /* SnapsViewController.swift */; };
 		18C7A97B1FCD54A30044BD14 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C7A97A1FCD54A30044BD14 /* FotoViewController.swift */; };
+		18D3E1951FD442A700DD3CA3 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3E1941FD442A700DD3CA3 /* UsersTableViewController.swift */; };
+		18D3E1971FD48CD000DD3CA3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3E1961FD48CD000DD3CA3 /* User.swift */; };
 		3159E44F1ED798BA0037E3DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3159E44E1ED798BA0037E3DB /* AppDelegate.swift */; };
 		3159E4511ED798BA0037E3DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3159E4501ED798BA0037E3DB /* ViewController.swift */; };
 		3159E4541ED798BA0037E3DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3159E4521ED798BA0037E3DB /* Main.storyboard */; };
@@ -25,8 +28,11 @@
 		188B30001FCB547800A23AE7 /* UIViewController+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Common.swift"; sourceTree = "<group>"; };
 		188B30021FCB568100A23AE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18A0E6281FC9BF0500BAAA25 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		18A7E8011FD68EC500A4C2E6 /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		18C7A9781FCD54990044BD14 /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		18C7A97A1FCD54A30044BD14 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
+		18D3E1941FD442A700DD3CA3 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		18D3E1961FD48CD000DD3CA3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3159E44B1ED798BA0037E3DB /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3159E44E1ED798BA0037E3DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3159E4501ED798BA0037E3DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +58,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181FCEF21FCF87D0005BF455 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3159E4501ED798BA0037E3DB /* ViewController.swift */,
+				18A0E6281FC9BF0500BAAA25 /* CadastroViewController.swift */,
+				188B30001FCB547800A23AE7 /* UIViewController+Common.swift */,
+				188B30021FCB568100A23AE7 /* LoginViewController.swift */,
+				18C7A9781FCD54990044BD14 /* SnapsViewController.swift */,
+				18C7A97A1FCD54A30044BD14 /* FotoViewController.swift */,
+				18D3E1941FD442A700DD3CA3 /* UsersTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		181FCEF31FCF87D9005BF455 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18D3E1961FD48CD000DD3CA3 /* User.swift */,
+				18A7E8011FD68EC500A4C2E6 /* Snap.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		3159E4421ED798BA0037E3DB = {
 			isa = PBXGroup;
 			children = (
@@ -73,18 +102,14 @@
 		3159E44D1ED798BA0037E3DB /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				181FCEF31FCF87D9005BF455 /* Models */,
+				181FCEF21FCF87D0005BF455 /* ViewControllers */,
 				3159E44E1ED798BA0037E3DB /* AppDelegate.swift */,
-				3159E4501ED798BA0037E3DB /* ViewController.swift */,
 				3159E4521ED798BA0037E3DB /* Main.storyboard */,
 				3159E4551ED798BA0037E3DB /* Assets.xcassets */,
 				3159E4571ED798BA0037E3DB /* LaunchScreen.storyboard */,
 				3159E45A1ED798BA0037E3DB /* Info.plist */,
 				3159E4601ED79A730037E3DB /* GoogleService-Info.plist */,
-				18A0E6281FC9BF0500BAAA25 /* CadastroViewController.swift */,
-				188B30001FCB547800A23AE7 /* UIViewController+Common.swift */,
-				188B30021FCB568100A23AE7 /* LoginViewController.swift */,
-				18C7A9781FCD54990044BD14 /* SnapsViewController.swift */,
-				18C7A97A1FCD54A30044BD14 /* FotoViewController.swift */,
 			);
 			path = Snapchat;
 			sourceTree = "<group>";
@@ -232,9 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3159E4511ED798BA0037E3DB /* ViewController.swift in Sources */,
+				18A7E8021FD68EC500A4C2E6 /* Snap.swift in Sources */,
 				18C7A97B1FCD54A30044BD14 /* FotoViewController.swift in Sources */,
+				18D3E1951FD442A700DD3CA3 /* UsersTableViewController.swift in Sources */,
 				188B30011FCB547800A23AE7 /* UIViewController+Common.swift in Sources */,
 				18C7A9791FCD54990044BD14 /* SnapsViewController.swift in Sources */,
+				18D3E1971FD48CD000DD3CA3 /* User.swift in Sources */,
 				18A0E6291FC9BF0500BAAA25 /* CadastroViewController.swift in Sources */,
 				188B30031FCB568100A23AE7 /* LoginViewController.swift in Sources */,
 				3159E44F1ED798BA0037E3DB /* AppDelegate.swift in Sources */,
