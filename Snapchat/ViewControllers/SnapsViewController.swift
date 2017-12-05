@@ -21,22 +21,20 @@ class SnapsViewController: UIViewController {
             let database = Database.database().reference()
             let users = database.child("usuarios")
             let snaps = users.child(uidUserLoged).child("snaps")
+            
             snaps.observe(.childAdded, with: { (response) in
-                if let data = response as? NSDictionary {
-                    let snap = Snap()
-                    snap.uid = response.key
-                    snap.name = data["nome"] as! String
-                    snap.from = data["de"] as! String
-                    snap.uidImage = data["idImagem"] as! String
-                    snap.urlImage = data["urlImagem"] as! String
-                    snap.descriptionImage =  data["descricao"] as! String
-                    self.snaps.append(snap)
-                }
-                
+                let snap = Snap(dataSnapshot: response)
+                self.snaps.append(snap)
+                print(snap)
             })
             
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("Listando os snaps")
+        print(snaps)
     }
     
     override func didReceiveMemoryWarning() {

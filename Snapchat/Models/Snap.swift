@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Snap: NSObject {
     
@@ -16,4 +17,19 @@ class Snap: NSObject {
     var descriptionImage = ""
     var urlImage = ""
     var uidImage = ""
+    
+    override init() {
+        super.init()
+    }
+    
+    init(dataSnapshot: DataSnapshot) {
+        if let data = dataSnapshot as? NSDictionary {            
+            self.uid = dataSnapshot.key
+            self.name = data["nome"] as! String
+            self.from = data["de"] as! String
+            self.uidImage = data["idImagem"] as! String
+            self.urlImage = data["urlImagem"] as! String
+            self.descriptionImage =  data["descricao"] as! String
+        }
+    }
 }
