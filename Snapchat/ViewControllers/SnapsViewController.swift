@@ -18,24 +18,40 @@ class SnapsViewController: UIViewController {
     override func viewDidLoad() {
         self.tableView.delegate = self
         super.viewDidLoad()
+    }
+    
+    func getDatas(){
         let auth = Auth.auth()
         if let uidUserLoged =  auth.currentUser?.uid {
             let database = Database.database().reference()
             let users = database.child("usuarios")
             let snaps = users.child(uidUserLoged).child("snaps")
             
+            //Observer when Created a snaps
             snaps.observe(.childAdded, with: { (response) in
                 let snap = Snap(dataSnapshot: response)
                 self.snaps.append(snap)
                 print(snap)
                 self.tableView.reloadData()
             })
-        }        
+            
+            //Observer when Removed a snaps
+            snaps.observe(.childRemoved, with: { (snapshot) in
+                
+                let snapMaps = self.snaps.filter{$0.uid == snapshot.key}
+                
+                guard let snapMapper = snapMaps.first else {return}
+                guard let index:Int = self.snaps.index(of: snapMapper) else {return}
+                self.snaps.remove(at: index)
+                                                
+
+            })
+            
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("Listando os snaps")
-        print(snaps)
+        getDatas()
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,6 +93,19 @@ extension SnapsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    // MARK -- Row Selected 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetails" {
+            let totalSnaps = snaps.count
+            if totalSnaps > 0 {
+                guard let indexPath = tableView.indexPathForSelectedRow else {return}
+                let snap = self.snaps[indexPath.row]
+                let detailVC = segue.destination as! DetailSnapViewController
+                detailVC.snap = snap
+            }
+        }
     }
     
 }

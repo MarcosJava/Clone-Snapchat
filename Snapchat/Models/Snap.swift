@@ -23,13 +23,29 @@ class Snap: NSObject {
     }
     
     init(dataSnapshot: DataSnapshot) {
-        if let data = dataSnapshot as? NSDictionary {            
-            self.uid = dataSnapshot.key
+        let data = dataSnapshot.value as! NSDictionary
+        
+        self.uid = dataSnapshot.key
+        
+        if data["nome"] != nil {
             self.name = data["nome"] as! String
+        }
+        if data["de"] != nil {
             self.from = data["de"] as! String
+        }
+        
+        if data["idImagem"] != nil {
             self.uidImage = data["idImagem"] as! String
+        }
+        
+        if data["urlImagem"] != nil {
             self.urlImage = data["urlImagem"] as! String
+        }
+        if data["descricao"] != nil {
             self.descriptionImage =  data["descricao"] as! String
         }
+        
+        
+        
     }
 }
