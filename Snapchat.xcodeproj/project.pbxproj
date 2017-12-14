@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187065031FD78F98002D4066 /* DetailSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187065021FD78F98002D4066 /* DetailSnapViewController.swift */; };
 		188B30011FCB547800A23AE7 /* UIViewController+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B30001FCB547800A23AE7 /* UIViewController+Common.swift */; };
 		188B30031FCB568100A23AE7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B30021FCB568100A23AE7 /* LoginViewController.swift */; };
 		18A0E6291FC9BF0500BAAA25 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0E6281FC9BF0500BAAA25 /* CadastroViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187065021FD78F98002D4066 /* DetailSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSnapViewController.swift; sourceTree = "<group>"; };
 		188B30001FCB547800A23AE7 /* UIViewController+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Common.swift"; sourceTree = "<group>"; };
 		188B30021FCB568100A23AE7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18A0E6281FC9BF0500BAAA25 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				18C7A9781FCD54990044BD14 /* SnapsViewController.swift */,
 				18C7A97A1FCD54A30044BD14 /* FotoViewController.swift */,
 				18D3E1941FD442A700DD3CA3 /* UsersTableViewController.swift */,
+				187065021FD78F98002D4066 /* DetailSnapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -210,9 +213,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -240,13 +250,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Snapchat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -258,6 +271,7 @@
 			files = (
 				3159E4511ED798BA0037E3DB /* ViewController.swift in Sources */,
 				18A7E8021FD68EC500A4C2E6 /* Snap.swift in Sources */,
+				187065031FD78F98002D4066 /* DetailSnapViewController.swift in Sources */,
 				18C7A97B1FCD54A30044BD14 /* FotoViewController.swift in Sources */,
 				18D3E1951FD442A700DD3CA3 /* UsersTableViewController.swift in Sources */,
 				188B30011FCB547800A23AE7 /* UIViewController+Common.swift in Sources */,
